@@ -39,7 +39,8 @@ exports.getAllTodos = (req, res) => {
 exports.createTodo = (req, res) => {
   try {
     const todos = readData();
-    const newTodo = { id: todos.length + 1, ...req.body };
+    const lastUpdated = new Date().toISOString();
+    const newTodo = { id: todos.length + 1, data: req.body.data, lastUpdated };
     todos.push(newTodo);
     writeData(todos);
     res.status(201).json({ message: "Todo created successfully" });
@@ -57,7 +58,8 @@ exports.updateTodo = (req, res) => {
     const index = todos.findIndex((todo) => todo.id === todoId);
 
     if (index !== -1) {
-      todos[index] = { ...todos[index], ...updateTodo };
+      const lastUpdated = new Date().toISOString();
+      todos[index] = { ...todos[index], ...updateTodo, lastUpdated };
       writeData(todos);
       res.status(200).json({ message: "Todo updated successfully" });
     } else {
