@@ -10,7 +10,7 @@ This project is a backend application that performs CRUD (Create, Read, Update, 
 
 1. Clone the repository.
 2. Install the required dependencies using `npm install`.
-3. Set up the database connection in the configuration file.
+3. Create a data/data.json file from the root directory.
 4. Run the application using `npm start`.
 
 ## Usage

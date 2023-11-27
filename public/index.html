@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <div>
+        <h1>Todo App</h1>
+        <form id="todoForm">
+          <input
+            type="text"
+            id="todoTitle"
+            placeholder="Enter title"
+            required
+          />
+          <button type="button" id="addBtn" onclick="addTodo()">Add</button>
+        </form>
+      </div>
+
+      <ul id="todoList">
+        <li>
+          <div class="todo-title">
+            <p>Title</p>
+            <p>2023-11-28</p>
+          </div>
+          <div>
+            <button type="button" onclick="editTodo()">
+              <img src="./assets/edit.svg" alt="edit" class="editIcon" />
+            </button>
+            <button type="button" onclick="deleteTodo()">
+              <img src="./assets/delete.svg" alt="delete" class="deleteIcon" />
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

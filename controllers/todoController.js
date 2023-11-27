@@ -17,6 +17,9 @@ const readData = () => {
 //? Write data to data.json file
 const writeData = (data) => {
   try {
+    if (!fs.existsSync(dataPath)) {
+      fs.writeFileSync(dataPath, "[]", "utf-8");
+    }
     fs.writeFileSync(dataPath, JSON.stringify(data, null, 2), "utf-8");
   } catch (error) {
     throw error;
